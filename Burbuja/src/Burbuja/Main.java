@@ -20,7 +20,7 @@ class Main {
 		System.out.println("3.) Metodo Quicksort.");
 		System.out.println("4.) Metodo Headsort.");
 		System.out.println("5.) Metodo Countingsort.");
-		System.out.println("6.) Metodo Radixsort.");
+		System.out.println("6.) Metodo Radixsort.");//EL RADIXSORT NO FUNCIONA, ARREGLARLO O REEMPLAZARLO
 		System.out.println("7.) Salir del programa.");
 		System.out.println("Escoja una opcion:");
 		op=sc.nextInt();
@@ -105,13 +105,49 @@ class Main {
 		break;
 		case 5:
 			System.out.flush();
-			//countingsort
+			System.out.println("USTED DECIDIO UTILIZAR EL METODO COUNTINGSORT.");
+			System.out.println("Los numeros que se pondran en el arreglo seran aleatorios.");
+			System.out.println("Ingrese la dimension del vector a ordenar:");
+			n=sc.nextInt();
+			int[] vecounting=new int[10];
+			//int arreglo = (int) (Math.random()*n)+1;
+			for(int x=0;x<vecounting.length;x++) {
+				vecounting[x] = (int) (Math.random()*2000)+1;
+			}
+			System.out.println("Metodo countingcksort.");
+			Countingsort co = new Countingsort();
+			co.Countingsort(vecounting);
+			
+			for(int i=0; i< vecounting.length;i++) {
+				System.out.println(vecounting[i]);
+			}
+			tfin=System.currentTimeMillis();//TOMAMOS LA HORA EN QUE SE FINALIZO EL ALGORITMO Y LO ALMACENAMOS EN UNA VARIABLE
+			tiempo=tfin-tinicio;//SE CALCULA LOS MILISEGUNDOS DE DIFERENCIA
+			System.out.println("El tiempo de compilacion en milisegundos es: "+tiempo);//SE MUESTRA EN PANTALLA EL TIEMPO DE LA EJECUCION EN MILISEGUNDOS
 			new java.util.Scanner(System.in).nextLine();
 			System.out.flush();
 		break;
 		case 6:
 			System.out.flush();
-			//radixsort
+			System.out.println("USTED DECIDIO UTILIZAR EL METODO RADIXSORT.");
+			System.out.println("Los numeros que se pondran en el arreglo seran aleatorios.");
+			System.out.println("Ingrese la dimension del vector a ordenar:");
+			n=sc.nextInt();
+			int[] vecradix=new int[n];
+			//int arreglo = (int) (Math.random()*n)+1;
+			for(int x=0;x<vecradix.length;x++) {
+				vecradix[x] = (int) (Math.random()*2000)+1;
+			}
+			System.out.println("Metodo radixsort.");
+			Radixsort ra = new Radixsort();
+			ra.Radixsort(vecradix);
+			
+			for(int i=0; i< vecradix.length;i++) {
+				System.out.println(vecradix[i]);
+			}
+			tfin=System.currentTimeMillis();//TOMAMOS LA HORA EN QUE SE FINALIZO EL ALGORITMO Y LO ALMACENAMOS EN UNA VARIABLE
+			tiempo=tfin-tinicio;//SE CALCULA LOS MILISEGUNDOS DE DIFERENCIA
+			System.out.println("El tiempo de compilacion en milisegundos es: "+tiempo);//SE MUESTRA EN PANTALLA EL TIEMPO DE LA EJECUCION EN MILISEGUNDOS
 			new java.util.Scanner(System.in).nextLine();
 			System.out.flush();
 		break;
